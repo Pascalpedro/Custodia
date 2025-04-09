@@ -1,0 +1,52 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+.pytest_cache
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.log
+
+# Virtual Environment
+venv/
+.venv/
+flask_env/
+
+# Environment variables
+.env
+.env.*
+*.env
+
+
+# Certbot
+data/certbot/
+
+# Editor settings
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Nginx cert and cache
+/etc/letsencrypt/
+*.pem
+*.crt
+*.key
+
+# Node / React (if frontend added)
+node_modules/
+build/
+dist/
+
+# ngrok tunnel metadata (optional)
+.ngrok2/
+
+
+# Others
+.dockerignore
+.swp
+.cache
+*~ 
