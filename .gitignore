@@ -6,7 +6,10 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
+
+# logs
 *.log
+logs/
 
 # Virtual Environment
 venv/
@@ -29,24 +32,37 @@ data/certbot/
 # OS generated files
 .DS_Store
 Thumbs.db
+ehthumbs.db
+*~ 
 
 # Nginx cert and cache
 /etc/letsencrypt/
+/data/certbot/conf/
+/data/certbot/www/
+
+# Secrets and key files
 *.pem
 *.crt
 *.key
+*.csr
+
+# Database files
+*.db
 
 # Node / React (if frontend added)
 node_modules/
 build/
 dist/
+npm-debug.log
 
 # ngrok tunnel metadata (optional)
 .ngrok2/
 
 
 # Others
-.dockerignore
-.swp
+*.bak
+*.swp
+*.swo
+*.swn
 .cache
-*~ 
+
