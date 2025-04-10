@@ -1,8 +1,8 @@
 # Secure Flask Microservice
 
 ## Introduction!!!
----
-### Secure Flask Microservice: Robust and Scalable Web Service with Enhanced Security
+
+### Secure Flask Microservice: a robust and Scalable Web app with Enhanced Security.
 ---
 In today's fast-paced digital economy, businesses face the pressing challenge of delivering secure, scalable, and responsive web services that can adapt to changing market demands. Introducing the Secure and Scalable Flask Microservice, a cutting-edge solution that combines the power of Flask, Docker, ngrok, and Auth0 to revolutionize the way you build and deploy your web-based applications.
 
@@ -29,9 +29,8 @@ By combining these powerful components, we have created a Secure Flask Microserv
 Whether you're a developer, a system administrator, or a business stakeholder, the Secure Flask Microservice project offers a reliable and secure foundation for your web-based applications. Join us in this exciting journey as we explore the benefits of this cutting-edge architecture and unlock new possibilities in the world of secure and scalable web services.
 
 ---
----
 ### Key Features of Secure Flask Microservice!!!
----
+
 - **Flask-based Web Service**: The project utilizes the lightweight and flexible Flask web framework to power the core functionality of the web service.
 - **Docker Containerization**: The Flask app is containerized using Docker, enabling easy deployment, scaling, and management of the web service.
 - **Secure Tunneling with ngrok**: The project integrates ngrok, a secure tunneling solution, to create an encrypted channel and shield the web service from direct internet exposure.
@@ -41,7 +40,6 @@ Whether you're a developer, a system administrator, or a business stakeholder, t
 - **Automated Deployment and Management**: The project leverages Docker and configuration files to enable automated deployment and management of the web service.
 - **Flexible and Extensible**: The Flask-based web service, combined with the modular and microservice-based design, provides a flexible and extensible foundation for building and enhancing web applications.
 
----
 ---
 ## System Architecture
 
@@ -64,11 +62,8 @@ Secure_Flask_Microservice
 │   ├── screenshots/
 ```
 ---
-
----
----
 ## PREREQUISITES
----
+
 1. **Server**: A running linux server (e.g., AWS EC2, onprem server, or any other cloud provider) with Ubuntu.
 
 2. **SSH Key Pair**: Access to the server via SSH.
@@ -97,7 +92,6 @@ Secure_Flask_Microservice
 
 7. **Ngrok Authtoken**: An ngrok account with an authtoken.
 
----
 ---
 ## QUICK SETUP:
 
@@ -162,9 +156,8 @@ Secure_Flask_Microservice
     
     - You can append the list of the python packages needed inside a requirements.txt file and then install them using `pip install -r requirements.txt` command.
 ---
----
 ### BUILDING THE CODE BLOCKS
----
+
 1.  **Set Up Environment Variables**:
     - Create a `.env` file with the necessary variables in your project root dir.
 
@@ -242,9 +235,7 @@ Secure_Flask_Microservice
     - The above ngrok generated url can be shared to trusted users with access to web browsers, to verify accessiblity of the flask app service via a secure tunneling solutions.
 
 ---
----
 ### INTEGRATING WITH EXTERNAL USER MANAGEMENT
----
 
 1. **Setting Up Auth0**:
     - For the external authentication and user management system integration with the VPN tunneling solution, let's use `Auth0 authentication` because of it's seamless compactibility with Ngrok.
@@ -276,9 +267,7 @@ Secure_Flask_Microservice
 
 5.  - Sign up with a new account and complete the authentication and gain secured access to the `flask_app` web service.
 ---
----
 ### ADD LOGIN TO THE FLASK APPLICATION!!!
----
 
 Auth0 makes it possible to add authentication to the Flask web application and gain access to user profile information built with the Flask framework and Authlib OAuth library.
 
@@ -499,9 +488,7 @@ Auth0 makes it possible to add authentication to the Flask web application and g
 ```
 
 ---
----
 ### CONTAINERIZATION
----
 
 1.  -**Scaling with Docker**:
     - Create a `Dockerfile` script on your project root dir, where the flask script and requirements.txt files are located and append the below scripts:
@@ -565,9 +552,7 @@ Auth0 makes it possible to add authentication to the Flask web application and g
     - The above ngrok generated url can be shared to users with access to web browsers, to create accounts and have access to the flask app service via a secure tunneling solutions.
 
 ---
----
 ### LOAD BALANCING & SCALABILITY!!!
----
 
 **Nginx**:
     - a powerful and widely-used web server that can also function as a reverse proxy, load balancer, and HTTP cache.
@@ -702,15 +687,11 @@ To leverage on the docker-compose tool;
 
     And you now have an optimized Flask server embedded with **auth0 authentication** parameters running in a Docker container.
 ---
----
 ### TESTING
----
 - Refer to the previous implemented steps....
 
 ---
----
 ### CONCLUSION!!!
----
 Through this comprehensive solution, we have addressed the key challenges of modern web application development, by prioritizing security, scalability, and maintainability. The Secure and Scalable Flask Microservice project offers a robust and adaptable foundation for building secure, high-performing web services that can keep pace with the ever-evolving digital landscape.
 
 
