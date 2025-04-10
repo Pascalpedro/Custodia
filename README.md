@@ -1,16 +1,11 @@
 # Secure Flask Microservice
 
----
-
-## Author: Pascal Attama <attamapascalpedro@gmail.com>
-
----
-
 ## Introduction!!!
-
+---
 ### Secure Flask Microservice: Robust and Scalable Web Service with Enhanced Security
-
+---
 In today's fast-paced digital economy, businesses face the pressing challenge of delivering secure, scalable, and responsive web services that can adapt to changing market demands. Introducing the Secure and Scalable Flask Microservice, a cutting-edge solution that combines the power of Flask, Docker, ngrok, and Auth0 to revolutionize the way you build and deploy your web-based applications.
+
 
 As businesses strive to stay ahead of the competition, the need for a reliable and secure web service infrastructure has become increasingly critical. Our Secure and Scalable Flask Microservice addresses this crucial requirement by providing a comprehensive and scalable solution that can be tailored to the unique needs of your organization.
 
@@ -34,9 +29,9 @@ By combining these powerful components, we have created a Secure Flask Microserv
 Whether you're a developer, a system administrator, or a business stakeholder, the Secure Flask Microservice project offers a reliable and secure foundation for your web-based applications. Join us in this exciting journey as we explore the benefits of this cutting-edge architecture and unlock new possibilities in the world of secure and scalable web services.
 
 ---
-
-### Key Features of Secure Flask Microservice
-
+---
+### Key Features of Secure Flask Microservice!!!
+---
 - **Flask-based Web Service**: The project utilizes the lightweight and flexible Flask web framework to power the core functionality of the web service.
 - **Docker Containerization**: The Flask app is containerized using Docker, enabling easy deployment, scaling, and management of the web service.
 - **Secure Tunneling with ngrok**: The project integrates ngrok, a secure tunneling solution, to create an encrypted channel and shield the web service from direct internet exposure.
@@ -47,10 +42,34 @@ Whether you're a developer, a system administrator, or a business stakeholder, t
 - **Flexible and Extensible**: The Flask-based web service, combined with the modular and microservice-based design, provides a flexible and extensible foundation for building and enhancing web applications.
 
 ---
+---
+## System Architecture
 
+### Architecture Diagram
+(Add an architectural diagram here to show the relationships between services)
+
+### Project Structure
+```
+Secure_Flask_Microservice
+│── app.py
+│── requirements.txt
+│── .env
+│── templates/
+│   ├── home.html
+│── Dockerfile
+│── nginx.conf
+│── docker-compose.yml
+│── README.md
+│── docs/
+│   ├── screenshots/
+```
+---
+
+---
+---
 ## PREREQUISITES
-
-1. **Server**: A running linux server (e.g., AWS EC2, DigitalOcean Droplet, or any other cloud provider) with Ubuntu.
+---
+1. **Server**: A running linux server (e.g., AWS EC2, onprem server, or any other cloud provider) with Ubuntu.
 
 2. **SSH Key Pair**: Access to the server via SSH.
 
@@ -79,9 +98,8 @@ Whether you're a developer, a system administrator, or a business stakeholder, t
 7. **Ngrok Authtoken**: An ngrok account with an authtoken.
 
 ---
-
+---
 ## QUICK SETUP:
-
 
 1. **Connect to the remote server**: From your local machine, SSH into the remote server using the provided username and password.
 
@@ -119,9 +137,9 @@ Whether you're a developer, a system administrator, or a business stakeholder, t
    - Set up a dir to contain your scripts and configuration files and change the ownership of the dir to the current user.
 
     ```bash
-    mkdir web_serv
-    chown -R $USERNAME:$USERNAME /home/$USERNAME/web_serv
-    cd _web_serv
+    mkdir Secure_Flask_Microservice
+    chown -R $USERNAME:$USERNAME /home/$USERNAME/Secure_Flask_Microservice
+    cd Secure_Flask_Microservice
     ```
 
 6. **Set Up and Activate a Virtual Environment (env)**:
@@ -143,11 +161,12 @@ Whether you're a developer, a system administrator, or a business stakeholder, t
     OR
     
     - You can append the list of the python packages needed inside a requirements.txt file and then install them using `pip install -r requirements.txt` command.
-
+---
+---
 ### BUILDING THE CODE BLOCKS
-
+---
 1.  **Set Up Environment Variables**:
-    - Create a `.env` file with the necessary variables in your pjoject root dir.
+    - Create a `.env` file with the necessary variables in your project root dir.
 
 2.  **Create a basic app.py script**:
     - Using a text editor, create an `app.py` which create a simple web application that returns a JSON response with a greeting message and the current timestamp.
@@ -167,23 +186,13 @@ Whether you're a developer, a system administrator, or a business stakeholder, t
             }
 
         if __name__ == '__main__':
-            # #Debug/Development
-            # app.run(host='0.0.0.0', port=5000)
-            # Production
-            http_server = WSGIServer(('', 5000), app)
-            http_server.serve_forever()
+            # Debug/Development
+            app.run(host='0.0.0.0', port=5000, debug=True)
         ``` 
-    This above demonstrates the use of Flask for building a basic web application and the use of a high-performance WSGI server (gevent.pywsgi) for production deployment.
+    N/B: The essence of this basic app.py is to use it to set-up and test the `virtual-environ, ngrok, and screen` tools and verify that the tools are working. Involving the Auth0 code at this earlier stage will make the code a bit complex and might lead to debugging and complications.
 
-3. Create a `wsgi.py` file which will be used to       deploy the Flask application in a production-based environment and append the following:
-    ```python
-    from app import app
 
-    if __name__ == "__main__":
-        app.run(debug=True)
-    ```
-
-4.  Test the `app.py` script by running the below command in your terminal:
+3.  Test the `app.py` script by running the below command in your terminal:
 
     ```bash
     python3 app.py
@@ -197,7 +206,7 @@ Whether you're a developer, a system administrator, or a business stakeholder, t
     
     **Note**: If you encountered any blocker, kindly analysis the error messages and log files for further information.
 
-5.  **Set Up ngrok**:
+4.  **Set Up ngrok**:
     - Navigate to [**Ngrok Official Page**](https://ngrok.com/) and `sign up` for a new account.
     - Provide the required credentials and set up your account.
     - Login to your [Ngrok Dashboard](https://dashboard.ngrok.com/) and click on `Your Authtoken` to copy out your personal token that will be used to authenticate the ngrok agent that you downloaded on your server.
@@ -232,59 +241,10 @@ Whether you're a developer, a system administrator, or a business stakeholder, t
     - Click on the `Visit Site` button displaying on the webpage, verify that you can access the flask app service via ngrok secure tunnel.
     - The above ngrok generated url can be shared to trusted users with access to web browsers, to verify accessiblity of the flask app service via a secure tunneling solutions.
 
- ---
-    
-### CONTAINERIZATION
-
-1.  -**Scaling with Docker**:
-    - Create a `Dockerfile` script on your project root dir, where the flask script and requirements.txt files are located and append the below scripts:
-
-        ```Dockerfile
-        # Use a base image with the latest version of Python
-        FROM python:3.9-slim
-
-        # Set the working directory
-        WORKDIR /app
-
-        # A blueprint for installing necessary dependencies and libs
-        COPY requirements.txt .
-
-        # Install the required dependencies
-        RUN pip install --no-cache-dir -r requirements.txt
-
-        # Copy the Python script into the container
-        COPY . .
-
-        # Use Gunicorn to serve the Flask app and expose the port that the flask app will run on
-        CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
-        ```
-    The overall purpose of this Dockerfile is to create a Docker image that can be used to run the Flask-based web application. The image will have the necessary Python dependencies installed, and the Flask application will be served using the Gunicorn web server.
-
-2.  -**Building the Docker image**:
-    - Verify that your `pwd` is the dir where your `Dockerfile` `app.py` and `requirements.txt` files are located, and build the flask image using the below:
-
-        ```bash
-        docker build -t flask_app .
-        ```
-
-3.  -**Running the Docker image**:
-    - Run the container that was created based on your `flask_app` image:
-
-        ```bash
-        docker images  # to verify that the image is in your repo
-        docker run -p 5000:5000 flask_app
-        ```
-
-    And you now have an optimized Flask server running in a Docker container.
-
-    You should be able to check it in your Docker container's URL, for example: <a href="Your_Server_IP" target="_blank">http://Your_Server_IP:5000</a> or <a href="http://127.0.0.1" target="_blank">http://127.0.0.1:5000</a>
-
-
-4. - Follow the same procedure used with `Ngrok` similarly to when we deployed the service directly using the python command and verify that you can access the flask app service via Ngrok secure VPN tunnel.
-
+---
 ---
 ### INTEGRATING WITH EXTERNAL USER MANAGEMENT
-
+---
 
 1. **Setting Up Auth0**:
     - For the external authentication and user management system integration with the VPN tunneling solution, let's use `Auth0 authentication` because of it's seamless compactibility with Ngrok.
@@ -315,19 +275,20 @@ Whether you're a developer, a system administrator, or a business stakeholder, t
 4.  - Copy the URL available next to forwarding and launch your app. You will be redirected for authentication with Auth0.
 
 5.  - Sign up with a new account and complete the authentication and gain secured access to the `flask_app` web service.
-
+---
 ---
 ### ADD LOGIN TO THE FLASK APPLICATION!!!
+---
 
 Auth0 makes it possible to add authentication to the Flask web application and gain access to user profile information built with the Flask framework and Authlib OAuth library.
 
 1.  **Install python dependencies**:
     - Append the following python libs to your `requirements.txt` file:
         ```bash
-        flask>=2.0.3
-        python-dotenv>=0.19.2
-        authlib>=1.0
-        requests>=2.27.1
+        flask>=2.1.2
+        python-dotenv>=0.21.0
+        authlib>=1.2.0
+        requests>=2.28.1
         ```
     - Run the following command from your terminal to enable these dependencies in your project:
         ```bash
@@ -343,7 +304,7 @@ Auth0 makes it possible to add authentication to the Flask web application and g
         - `/logout` route used to sign users out from the application.
         - `/home` route renders an authenticated user's details or allows vistors to sign in.
 
-    - After appending the **auth0 functions()** to the existing `app.py` script or creating an entire new `app.py` script and renaming the previous one with another name to avoid conflict, your new `app.py` script should have the below contents:
+    - Modify your existing `app.py` script by appending the **auth0 functions()** to it. The modified `app.py` script should have the below contents:
       ```py
       import json
         from os import environ as env
@@ -353,7 +314,7 @@ Auth0 makes it possible to add authentication to the Flask web application and g
         from dotenv import find_dotenv, load_dotenv
         from flask import Flask, redirect, render_template, session, url_for
 
-
+        # Load environment variables from .env
         ENV_FILE = find_dotenv()
         if ENV_FILE:
             load_dotenv(ENV_FILE)
@@ -361,8 +322,8 @@ Auth0 makes it possible to add authentication to the Flask web application and g
         app = Flask(__name__)
         app.secret_key = env.get("APP_SECRET_KEY")
 
+        # OAuth configuration for Auth0
         oauth = OAuth(app)
-
         oauth.register(
             "auth0",
             client_id=env.get("AUTH0_CLIENT_ID"),
@@ -373,19 +334,20 @@ Auth0 makes it possible to add authentication to the Flask web application and g
             server_metadata_url=f'https://{env.get("AUTH0_DOMAIN")}/.well-known/openid-configuration'
         )
 
-
+        # Login route
         @app.route("/login")
         def login():
             return oauth.auth0.authorize_redirect(
                 redirect_uri=url_for("callback", _external=True)
             )
-
+        # Auth0 callback route
         @app.route("/callback", methods=["GET", "POST"])
         def callback():
             token = oauth.auth0.authorize_access_token()
             session["user"] = token
             return redirect("/")
 
+        # Logout route
         @app.route("/logout")
         def logout():
             session.clear()
@@ -401,14 +363,14 @@ Auth0 makes it possible to add authentication to the Flask web application and g
                 )
             )
 
+        # Home route
         @app.route("/")
         def home():
             return render_template(
                 "home.html",
                 session=session.get('user'))
-        #        pretty=json.dumps(session.get('user'), indent=4))
 
-
+        # Run the app (this is for development; Gunicorn will be implemented on the Dockerfile for production)
         if __name__ == "__main__":
             app.run(host="0.0.0.0", port=env.get("PORT", 5000))  
         ```
@@ -417,43 +379,177 @@ Auth0 makes it possible to add authentication to the Flask web application and g
 3.  **Add templates**:
     - Create a sub-dir in your project root folder named `templates` and create a `home.html` file in the dir.
     - Append the following html script into the `home.html` file:
-      ```html
-      <html>
-        <head>
-        <meta charset="utf-8" />
-        <title>Auth0 Example</title>
-        </head>
-        <body>
-        {% if session %}
-            <h1>Welcome {{session.userinfo.name}}!</h1>
-            <p><a href="/logout">Logout</a></p>
-        {% else %}
-            <h1>Welcome Guest</h1>
-            <p><a href="/login">Login</a></p>
-        {% endif %}
-        </body>
-        </html>
+```html
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Flask App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      position: relative;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      margin-top: 20px;
+    }
+
+    a {
+      color: #007BFF;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img.profile-pic {
+      border-radius: 50%;
+      width: 100px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Toast notification */
+    #toast {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #007BFF;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+
+    /* Loader */
+    #loader {
+      display: none;
+      margin-top: 15px;
+      font-style: italic;
+      color: #555;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="toast">Logged in successfully!</div>
+    {% if session %}
+      <img src="{{ session.userinfo.picture }}" alt="Profile Picture" class="profile-pic" />
+      <h1>Welcome to this space... {{ session.userinfo.name }}!</h1>
+      <p><a href="/logout">Logout</a></p>
+    {% else %}
+      <h1>Welcome.... Guest!!!</h1>
+      <p><a href="/login" onclick="showLoader()">Login</a></p>
+      <div id="loader">Redirecting to login...</div>
+    {% endif %}
+  </div>
+
+  <script>
+    function showLoader() {
+      document.getElementById('loader').style.display = 'block';
+    }
+
+    // Show toast if redirected from Auth0
+    window.onload = function () {
+      const toast = document.getElementById('toast');
+      if (window.location.href.includes('callback')) {
+        toast.style.display = 'block';
+        setTimeout(() => toast.style.display = 'none', 3000);
+      }
+    };
+  </script>
+</body>
+</html>
+```
+
+---
+---
+### CONTAINERIZATION
+---
+
+1.  -**Scaling with Docker**:
+    - Create a `Dockerfile` script on your project root dir, where the flask script and requirements.txt files are located and append the below scripts:
+
+        ```Dockerfile
+        # Use a base image with the latest version of Python
+        FROM python:3.9-slim
+
+        # Set the working directory
+        WORKDIR /app
+
+        # A blueprint for installing necessary dependencies and libs
+        COPY requirements.txt .
+
+        # Install the required dependencies
+        RUN pip install --no-cache-dir -r requirements.txt
+
+        # Copy the Python script into the container
+        COPY . .
+
+        # Use Gunicorn to serve the Flask app and expose the port that the flask app will run on
+        CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
         ```
+    The overall purpose of this Dockerfile is to create a Docker image that can be used to run the Flask-based web application. The image will have the necessary Python dependencies installed, and the Flask application will be served using the Gunicorn web server.
 
+2.  -**Building the Docker image**:
+    - Verify that your `pwd` is the dir where your `Dockerfile` `app.py` and `requirements.txt` files are located, and build the flask image using the below:
 
-4.  **Re-build the Docker image**:
-    - Rebuild the Docker image to sync and reflect with the modified `app.py` script using the:
         ```bash
         docker build -t flask_auth0 .
         ```
 
-    **Running the Docker image**:
-    - Run the container that was created based on your `flask_auth0` image:
+3.  -**Running the Docker image**:
+    - Run the container that was created based on your `flask_app` image:
 
         ```bash
         docker images  # to verify that the image is in your repo
-        docker run -p 5000:5000 flask_auth0
+        docker run -p 5000:5000 --env-file .env flask-auth0
         ```
 
     And you now have an optimized Flask server embedded with **auth0 authentication** parameters running in a Docker container.
 
+    You should be able to check it in your Docker container's URL, for example: <a href="Your_Server_IP" target="_blank">http://Your_Server_IP:5000</a> or <a href="http://127.0.0.1" target="_blank">http://127.0.0.1:5000</a>
 
-5. **Spin-up Ngrok**:
+
+4. **Spin-up Ngrok**:
+    - Following the same procedure we used earlier with `Ngrok` to when we deployed the service directly using the python command, verify that you can access the flask app service via Ngrok secure VPN tunnel by:
+
    - Serve the application via the ngrok ingress and start a HTTP tunnel forwarding pointing to your `flask_auth0` docker container using:
   
         ```bash
@@ -469,30 +565,53 @@ Auth0 makes it possible to add authentication to the Flask web application and g
     - The above ngrok generated url can be shared to users with access to web browsers, to create accounts and have access to the flask app service via a secure tunneling solutions.
 
 ---
-### LOAD BALANCING!!!
+---
+### LOAD BALANCING & SCALABILITY!!!
+---
 
-**Nginx**: a powerful and widely-used web server that can also function as a reverse proxy, load balancer, and HTTP cache.
+**Nginx**:
+    - a powerful and widely-used web server that can also function as a reverse proxy, load balancer, and HTTP cache.
 
 Let's integrate Nginx with our `Secure Flask Microservice` app to create a more robust, scalable, and secure web application infrastructure. Nginx's flexibility and efficiency make it a popular choice for hosting and managing web applications, especially in production environments.
 
 - Create an nginx configuration file called `nginx.conf` in your project root dir and append the below scripts:
     ```plain
+    # Define the load-balanced backend servers
     upstream web_servers {
         least_conn;
-        server $Your_Server_IP:5000;
+        server flask_app:5000;
     }
 
+    # HTTP server block
     server {
         listen 80;
-        server_name your-app.com;
+        server_name _;
 
+        # Proxy requests to backend servers
         location / {
             proxy_pass http://web_servers;
+            proxy_http_version 1.1;
+
+            # Preserve client request headers
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+
+            # Connection settings
+            proxy_connect_timeout       10;
+            proxy_send_timeout          30;
+            proxy_read_timeout          30;
+            send_timeout                30;
+        }
+
+        # Custom error pages
+        error_page 502 503 504 /50x.html;
+        location = /50x.html {
+            root /usr/share/nginx/html;
         }
     }
+
     ```
 - Modify your Dockerfile to allow Nginx to act as the load balancer, forwarding incoming requests to the multiple instances of the Flask application using the below script:
     ```Dockerfile
@@ -514,7 +633,7 @@ Let's integrate Nginx with our `Secure Flask Microservice` app to create a more 
     # Use Nginx as the load balancer and Gunicorn to serve the Flask app and expose the port that the flask app will run on
     RUN apt-get update && apt-get install -y nginx
     COPY nginx.conf /etc/nginx/conf.d/default.conf
-    CMD ["bash", "-c", "nginx -g 'daemon off;' & gunicorn --bind 0.0.0.0:5000 app:app"]
+    CMD ["bash", "-c", "nginx -g 'daemon off;' & gunicorn --workers 4 --threads 2 --bind 0.0.0.0:5000 --access-logfile - --error-logfile - app:app"]
     ```
     **Re-build the Docker image**:
     - Rebuild the Docker image to sync and reflect with the modified `app.py` script using the:
@@ -527,15 +646,84 @@ Let's integrate Nginx with our `Secure Flask Microservice` app to create a more 
 
         ```bash
         docker images  # to verify that the image is in your repo
-        docker run -p 5000:5000 flask_auth0
+        docker run -p 5000:5000 --env-file .env flask_auth0_nginx
         ```
 
     And you now have an **`optimized Flask server` embedded with `auth0` authentication parameters, with `Nginx` server acting as a load balancer** running in a `Docker` container.
 
+
+**Docker-compose**:
+    - a tool that helps you define and manage multi-container Docker applications using a single YAML file. It’s great for applications that require several services running together.  
+
+We are already running a flask service and nginx service which makes up a multi-container.
+Docker Compose will simplify the way we run our  multi-container apps by separating services like Flask (with Gunicorn) and Nginx into different containers. It enables easier scaling, network setup, and service management with a single YAML file and one command: docker-compose up. It follows Docker best practices and improves maintainability.
+To leverage on the docker-compose tool; 
+- Create an docker-compose configuration file called `docker-compose.yml` in your project root dir and append the below scripts:
+    ```yml
+    services:
+        web:
+            build: .
+            container_name: flask_app
+            command: gunicorn --bind 0.0.0.0:5000 app:app
+            volumes:
+              - .:/app
+            ports:
+              - "5000:5000"
+            env_file:
+              - .env
+            restart: always
+
+        nginx:
+            image: nginx:latest
+            container_name: nginx_proxy
+            ports:
+              - "80:80" # Keep only this for dev
+            volumes:
+              - ./nginx.conf:/etc/nginx/conf.d/default.conf
+            depends_on:
+              - web
+            restart: always
+---
+
+   - Build the docker-compose image:
+    - Verify that your `pwd` is in your root project dir where your `docker-compose.yml` and other files are located, and run the below command:
+
+        ```bash
+        sudo docker compose --env-file .env --build
+        ```
+
+  - Run the docker-compose image**:
+    - Run the container that was created based on your `flask_app` image:
+
+        ```bash
+        docker images  # to verify that the multi-container images has been created.
+        sudo docker compose --env-file .env up
+        ```
+
+    And you now have an optimized Flask server embedded with **auth0 authentication** parameters running in a Docker container.
+---
 ---
 ### TESTING
+---
 - Refer to the previous implemented steps....
 
 ---
+---
 ### CONCLUSION!!!
+---
 Through this comprehensive solution, we have addressed the key challenges of modern web application development, by prioritizing security, scalability, and maintainability. The Secure and Scalable Flask Microservice project offers a robust and adaptable foundation for building secure, high-performing web services that can keep pace with the ever-evolving digital landscape.
+
+
+## Contribution Guidelines
+We welcome contributions! Please follow these steps:
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit changes with meaningful messages.
+4. Submit a pull request.
+
+## License
+This project is open-source and available under the **MIT License**.
+
+## Author
+- **Pascal Attama** – [GitHub](https://github.com/Pascalpedro) 
+- Contributions are welcome! Feel free to submit PRs.
