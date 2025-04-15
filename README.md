@@ -248,9 +248,9 @@ Secure_Flask_Microservice
     - On the ngrok app page, click the Settings tab and copy the `Domain, Client ID, and Client Secret` values, to be used later.
     - Enter the URLs `https://idp.ngrok.com/oauth2/callback` `http://*.ngrok-free.app/callback` in the **Allowed Callback URLs** field, and enter the URLs `https://idp.ngrok.com/oauth2` `http://*.ngrok-free.app` in the **Allowed Logout URLs** field. Also for security checks, enter the URLs `https://idp.ngrok.com` `http://*.ngrok-free.app` in your **Allowed Web Origins** field.
 
-![Auth0 Ngrok Integration](docs/screenshots/auth0_ngrok.JPG)
+![Auth0 Ngrok Integration](docs/screenshots/auth0_ngrok.jpg)
 
-![Auth0 Ngrok Integration](docs/screenshots/auth0_URLs.JPG)
+![Auth0 Ngrok Integration](docs/screenshots/auth0_URLs.jpg)
 
 2.  - Return to the root directory of the project in the terminal and create a `.env` file and pass in the following parameters:
 
@@ -541,7 +541,7 @@ Auth0 makes it possible to add authentication to the Flask web application and g
 
     You should be able to check it in your Docker container's URL, for example: <a href="Your_Server_IP" target="_blank">http://Your_Server_IP:5000</a> or <a href="http://127.0.0.1" target="_blank">http://127.0.0.1:5000</a>
 
-    ![Docker Container](docs/screenshots/docker_ps.JPG)
+    ![Docker Container](docs/screenshots/docker_ps.jpg)
 
 
 4. **Spin-up Ngrok**:
@@ -554,7 +554,7 @@ Auth0 makes it possible to add authentication to the Flask web application and g
         ```
 
     - Ngrok will serve the `flask_auth0` docker container via the URL listed by the ngrok agent, mapped to `Forwarding` in the ngrok terminal, e.g: [Forwarding URL](https://492b-2a01-7e01-00-f03c-95ff-fe50-61f2.ngrok-free.app).
-      ![Ngrok Tunnel](docs/screenshots/ngrok_tunnel.JPG)
+      ![Ngrok Tunnel](docs/screenshots/ngrok_tunnel.jpg)
     -  Copy the URL available next to forwarding and launch your app. You will be redirected for authentication with Auth0.
     - Click on the `Visit Site` button displaying on the webpage.
    - Sign up with a new account and complete the authentication and gain secured access to the `flask_app` web service.
@@ -701,10 +701,10 @@ To leverage on the docker-compose tool;
 ### TESTING
 - Refer to the previous implemented steps....
 
-![Ngrok Login](docs/screenshots/ngrok_Login.JPG)
-![Login Page](docs/screenshots/login_page.JPG)
-![Auth0 Login](docs/screenshots/auth0_login.JPG)
-![Auth0 Logout](docs/screenshots/auth0_logout.JPG)
+![Ngrok Login](docs/screenshots/ngrok_login.jpg)
+![Login Page](docs/screenshots/login_page.jpg)
+![Auth0 Login](docs/screenshots/auth0_login.jpg)
+![Auth0 Logout](docs/screenshots/auth0_logout.jpg)
 
 ---
 ### CONCLUSION!!!
