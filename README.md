@@ -1,4 +1,5 @@
 # Custodia
+![Custodia Logo](docs/screenshots/custodia_logo.png)
 
 ## Introduction!!!
 
@@ -89,11 +90,11 @@ Custodia
    - `APP_SECRET_KEY`
 
 6. **Auth0 Account**: an auth0 activated account.
-![Auth0 Dashboard](docs/screenshots/auth0_dashboard.JPG)
+![Auth0 Dashboard](docs/screenshots/auth0_dashboard.jpg)
 
 
 7. **Ngrok Authtoken**: An ngrok account with an authtoken.
-![Ngrok Dashboard](docs/screenshots/ngrok_dashboard.JPG)
+![Ngrok Dashboard](docs/screenshots/ngrok_dashboard.jpg)
 
 ---
 ## QUICK SETUP:
