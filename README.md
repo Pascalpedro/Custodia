@@ -1,5 +1,5 @@
 # Custodia
-![Custodia Logo](docs/screenshots/custodia_logo.png)
+![Custodia Logo](docs/screenshots/logo.jpg)
 
 ## Introduction!!!
 
