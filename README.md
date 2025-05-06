@@ -4,20 +4,20 @@
 
 ### Custodia: a robust and Scalable Enterprise-Grade Web app with Enhanced Security.
 ---
-In today's fast-paced digital economy, businesses face the pressing challenge of delivering secure, scalable, and responsive web services that can adapt to changing market demands. Introducing the Secure and Scalable Flask Microservice, a cutting-edge solution that combines the power of Flask, Docker, ngrok, and Auth0 to revolutionize the way you build and deploy your web-based applications.
+In today's fast-paced digital economy, businesses face the pressing challenge of delivering secure, scalable, and responsive web services that can adapt to changing market demands. Introducing the Secure and Scalable Flask Microservice `Custodia`, a cutting-edge solution that combines the power of Flask, Docker, ngrok, and Auth0 to revolutionize the way you build and deploy your web-based applications.
 
 
-As businesses strive to stay ahead of the competition, the need for a reliable and secure web service infrastructure has become increasingly critical. Our Secure and Scalable Flask Microservice addresses this crucial requirement by providing a comprehensive and scalable solution that can be tailored to the unique needs of your organization.
+As businesses strive to stay ahead of the competition, the need for a reliable and secure web service infrastructure has become increasingly critical. `Custodia` addresses this crucial requirement by providing a comprehensive and scalable solution that can be tailored to the unique needs of your organization.
 
 At the core of this project is a Flask-based web service, a lightweight and flexible Python framework that forms the backbone of the application's functionality. To ensure secure access to this service, we have integrated ngrok, a secure tunneling solution that creates an encrypted channel which allows controlled access to the web service. This approach safeguards your web service from direct exposure, shielding it from potential threats and enabling secure access for your users.
 
-To further strengthen the security of our Secure Flask Microservice, we have incorporated Auth0, a leading identity and access management (IAM) platform. Auth0 handles user management, authentication, and authorization, ensuring that only authorized individuals can access the application's features and data, providing an additional layer of protection for your business-critical information.
+To further strengthen the security of `Custodia`, we have incorporated Auth0, a leading identity and access management (IAM) platform. Auth0 handles user management, authentication, and authorization, ensuring that only authorized individuals can access the application's features and data, providing an additional layer of protection for your business-critical information.
 
-The Secure and Scalable Flask Microservice is built using Docker containerization, a technology that enables the efficient deployment and scaling of your web service across multiple environments. By containerizing the Flask app, we have created a highly portable and scalable solution that can be easily managed and deployed, allowing your business to adapt quickly to changing market conditions and user demands.
+`Custodia` is built using Docker containerization, a technology that enables the efficient deployment and scaling of your web service across multiple environments. By containerizing the Flask app, we have created a highly portable and scalable solution that can be easily managed and deployed, allowing your business to adapt quickly to changing market conditions and user demands.
 
 With the integration of Nginx as a reverse proxy and Gunicorn as the application server, we have implemented a robust and high-availability architecture that can handle increased traffic and ensure the seamless operation of your web service.
 
-By combining these powerful components, we have created a Secure Flask Microservice that offers the following key benefits:
+By combining these powerful components, we created Custodia that offers the following key benefits:
 
 - **Secure Communication**: The ngrok tunneling service provides a secure, encrypted channel for accessing the Flask web service, protecting it from direct internet exposure.
 - **Enhanced Security and Robust Authentication**: The secure VPN tunneling with ngrok, integration with Auth0 for user management and authentication, and the containerized and microservice-based architecture enhance the overall security posture of the web service, protecting it from potential threats and unauthorized access.
@@ -26,10 +26,10 @@ By combining these powerful components, we have created a Secure Flask Microserv
 - **Improved Reliability and Maintainability**: The high-availability architecture, the modular and microservice-based design, and the containerized and automated deployment processes enhance the overall reliability and consistency of the web service, reducing the risk of downtime and simplifying the troubleshooting and debugging processes.
 - **Cost-effectiveness**: The modular and microservice-based design, the containerization and automated deployment processes, and the reusability and portability of the containerized Flask app lead to cost savings by reducing the complexity of development, testing, and deployment, and streamlining the infrastructure management.
 
-Whether you're a developer, a system administrator, or a business stakeholder, the Secure Flask Microservice project offers a reliable and secure foundation for your web-based applications. Join us in this exciting journey as we explore the benefits of this cutting-edge architecture and unlock new possibilities in the world of secure and scalable web services.
+Whether you're a developer, a system administrator, or a business stakeholder, `Custodia` offers a reliable and secure foundation for your web-based applications. Join us in this exciting journey as we explore the benefits of this cutting-edge architecture and unlock new possibilities in the world of secure and scalable web services.
 
 ---
-### Key Features of Secure Flask Microservice!!!
+### Key Features of Custodia!!!
 
 - **Flask-based Web Service**: The project utilizes the lightweight and flexible Flask web framework to power the core functionality of the web service.
 - **Docker Containerization**: The Flask app is containerized using Docker, enabling easy deployment, scaling, and management of the web service.
@@ -48,7 +48,7 @@ Whether you're a developer, a system administrator, or a business stakeholder, t
 
 ### Project Structure
 ```
-Secure_Flask_Microservice
+Custodia
 │── app.py
 │── requirements.txt
 │── .env
@@ -134,9 +134,9 @@ Secure_Flask_Microservice
    - Set up a dir to contain your scripts and configuration files and change the ownership of the dir to the current user.
 
     ```bash
-    mkdir Secure_Flask_Microservice
-    chown -R $USERNAME:$USERNAME /home/$USERNAME/Secure_Flask_Microservice
-    cd Secure_Flask_Microservice
+    mkdir Custodia
+    chown -R $USERNAME:$USERNAME /home/$USERNAME/Custodia
+    cd Custodia
     ```
 
 6. **Set Up and Activate a Virtual Environment (env)**:
@@ -708,7 +708,7 @@ To leverage on the docker-compose tool;
 
 ---
 ### CONCLUSION!!!
-Through this comprehensive solution, we have addressed the key challenges of modern web application development, by prioritizing security, scalability, and maintainability. The Secure and Scalable Flask Microservice project offers a robust and adaptable foundation for building secure, high-performing web services that can keep pace with the ever-evolving digital landscape.
+Through this comprehensive solution, we have addressed the key challenges of modern web application development, by prioritizing security, scalability, and maintainability. The `Custodia` project offers a robust and adaptable foundation for building secure, high-performing web services that can keep pace with the ever-evolving digital landscape.
 
 
 ## Contribution Guidelines
